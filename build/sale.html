@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function() {
+            var html = document.documentElement;
+            var _width = document.documentElement.clientWidth;
+            html.style.fontSize = Math.floor(_width) / 25 + "px";
+        })()
+    </script>
+    <title>销售深度分析</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css" />
+    <link rel="stylesheet" href="../sass/reset.css" />
+    <link rel="stylesheet" href="./css/sale.css" />
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="saleList s-show" id="Js_saleList_panel">
+        <h2 class="face-s-hd">
+            <a class="s-back" href="/sys/api/1.0.0/big-date/dsj-home" title="回到首页"></a>
+            <span class="s-btn"></span>
+            <input class="s-skey" placeholder="请输入销售名称" type="text" />
+        </h2>
+        <ul class="face-bd" id="Js_s_faceList">
+
+        </ul>
+        <div class="face-fd">
+            <span class="btn-jump">跳过</span>
+        </div>
+    </div>
+
+    <div class="screenPanel" id="Js_searchPanel">
+        <div class="btns">
+            <span class="back"></span>
+            <span class="text">筛选</span>
+            <span class="btn-true r">确定</span>
+        </div>
+        <div class="screenPanel-content">
+            <div class="s-item">
+                <h2 class="title">销售</h2>
+                <span class="s-face-btn"></span>
+                <input type="text" class="s-input" placeholder="请输入姓名搜索" />
+                <div class="faceList max" id="Js_faceList">
+
+                </div>
+                <div class="dropLoadMax"></div>
+            </div>
+            <div class="s-item dataType">
+                <h2 class="title">日期类型</h2>
+                <ul class="list sc-list" data-text="dateType">
+                    <li class="s-click active" data-type="出团日期">按出团日期</li>
+                    <li class="s-click" data-type="下单日期">按下单日期</li>
+                </ul>
+            </div>
+            <div class="s-item">
+                <h2 class="title">日期区间</h2>
+                <ul class="list sc-list">
+                    <li class="s-click active">2018</li>
+                    <li class="s-click">最近3个月</li>
+                    <li class="s-click">最近半年</li>
+                    <li class="s-click">最近1年</li>
+                </ul>
+                <div class="timeList">
+                    <input class="s-start" type="text" id="Js_startDate" value="2017-01-01" readonly="readonly" />
+                    <span class="space"></span>
+                    <input class="s-end" type="text" id="Js_endDate" value="2018-01-01" readonly="readonly" />
+                </div>
+            </div>
+            <div class="s-item">
+                <h2 class="title">产品类型</h2>
+                <ul class="list sc-list" data-text="operate_type">
+                    <li class="s-click active" data-type="">全部</li>
+                    <li class="s-click" data-type="0">自营</li>
+                    <li class="s-click" data-type="1">他营</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <header class="hd">
+        <a class="back" href="/sys/api/1.0.0/big-date/dsj-home" title="回到首页"></a>
+        <h2 class="title" id="Js_pageTitle">
+            基本资料
+        </h2>
+        <span class="screen" id="Js_screen">筛选</span>
+    </header>
+    <div class="hd-showTime" id="Js_page_showTime"></div>
+    <footer class="fd next" id="Js_fdScroll">
+        上滑查看更多
+    </footer>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide page1" id="Js_pageOne_saleInfo">
+
+            </div>
+            <div class="swiper-slide">
+                <!--业绩走势-->
+                <dl class="sale-v" id="Js_pageInfo_sale_1">
+
+                </dl>
+                <div class="main">
+                    <h2 class="title">总业绩<span class="num amount" id="Js_page_1_title"></span></h2>
+                    <div class="view">
+                        <div class="chart" id="Js_achievement">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <!--收客人数-->
+                <dl class="sale-v" id="Js_pageInfo_sale_2">
+
+                </dl>
+                <div class="main">
+                    <h2 class="title">总收客人数<span class="num psn" id="Js_page_2_title"></span></h2>
+                    <div class="view">
+                        <div class="chart" id="Js_saloon">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide custom">
+                <!--订单利润与亏损占比-->
+                <dl class="sale-v" id="Js_pageInfo_sale_3">
+
+                </dl>
+                <div class="main">
+                    <div class="main-ct" id="Js_profit_loss">
+                        <dl class="item">
+                            <dt class="item-hd">
+                                <p class="bit">80<span>%</span></p>
+                                <p class="pst"><span>￥</span>135487.00</p>
+                                <canvas class="ctx"></canvas>
+                            </dt>
+                            <dd class="item-text">盈利率</dd>
+                        </dl>
+                        <dl class="item">
+                            <dt class="item-hd">
+                                <p class="bit">80<span>%</span></p>
+                                <p class="pst"><span>￥</span>135487.00</p>
+                                <canvas class="ctx"></canvas>
+                            </dt>
+                            <dd class="item-text">亏损率</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide custom">
+                <!--产品类别销售占比-->
+                <dl class="sale-v" id="Js_pageInfo_sale_4">
+
+                </dl>
+                <div class="main">
+                    <div class="cvsMain">
+                        <ul class="cvsList" id="Js_saleTypeBit">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide custom">
+                <!--客单价区间销量占比-->
+                <dl class="sale-v" id="Js_pageInfo_sale_5">
+
+                </dl>
+                <div class="main screenY">
+                    <div class="cvs-content">
+                        <div class="noDate" id="Js_page_noDate_5">暂无数据</div>
+                        <canvas class="cvs" id="Js_unitPrice"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.op110.com.cn/lib/js/weui.min.js"></script>
+<script src="../ts/swiper-3.4.2.jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/echarts/3.6.2/echarts.min.js"></script>
+<script src="../ts/sale.js"></script>
+</body>
+</html>

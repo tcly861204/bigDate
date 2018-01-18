@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function() {
+            var html = document.documentElement;
+            var _width = document.documentElement.clientWidth;
+            html.style.fontSize = Math.floor(_width) / 25 + "px";
+        })()
+    </script>
+    <title>可视化大屏数据</title>
+    <link rel="stylesheet" href="../sass/reset.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+</head>
+<body>
+<div class="wrapper">
+    <div class="btns">
+        <span class="back"></span>
+        <span class="text">可视化大数据</span>
+    </div>
+    <ul class="list">
+        <li class="item">
+            <a href="/sys/api/1.0.0/big-date/dsj-sale">
+                <img class="icon" src="http://cdnfile.op110.com.cn/files/1/file/20180104/sale-icon_1515051633631.png" />
+                <p class="text">销售深度分析</p>
+            </a>
+        </li>
+        <li class="item">
+            <a href="/sys/api/1.0.0/big-date/dsj-operate">
+                <img class="icon" src="http://cdnfile.op110.com.cn/files/1/file/20180104/operate-icon_1515051651747.png" />
+                <p class="text">运营数据分析</p>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

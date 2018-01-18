@@ -1,0 +1,72 @@
+@r:30rem;
+@TextColor : #24fcff;
+@snColor : #ababab;
+@miniColor: #3bccff;
+
+html {
+  background:linear-gradient(#2e1f65, #0c1834);
+}
+
+html,body {
+  height:100%;
+  overflow:hidden;
+}
+
+.wrapper{
+  width: 100%;
+  height: 100%;
+  .btns{
+    display: flex;
+    padding: 0 0 0 20/@r;
+    margin-top: 10/@r;
+    height: 60/@r;
+    .text,.btn-true{
+      display: inline-block;
+      height: 60/@r;
+      line-height: 60/@r;
+      font-size: 28/@r;
+    }
+    .back{
+      width:60/@r;
+      background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/back_1515053459820.png") no-repeat center left;
+      background-size:36/@r;
+    }
+    .text{
+      flex: 1;
+      text-align: center;
+      color: @TextColor;
+      padding-right: 100/@r;
+    }
+    .btn-true{
+      padding: 0 40/@r;
+      color: @TextColor;
+    }
+  }
+  .list{
+    width: 710/@r;
+    margin: 0 auto;
+    padding-top: 20/@r;
+    .item{
+      margin-bottom: 15/@r;
+      height: 220/@r;
+      text-align: center;
+      background: #352a69;
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-top: 50/@r;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
+      .icon{
+        width: 79/@r;
+        height: 84/@r;
+      }
+      .text{
+        font-size: 34/@r;
+        color:@TextColor;
+      }
+    }
+  }
+}

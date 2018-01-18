@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function() {
+            var html = document.documentElement;
+            var _width = document.documentElement.clientWidth;
+            html.style.fontSize = Math.floor(_width) / 25 + "px";
+        })()
+    </script>
+    <title>运营分析</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css" />
+    <link rel="stylesheet" href="../sass/reset.css" />
+    <link rel="stylesheet" href="./css/operate.css" />
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="screenPanel" id="Js_searchPanel">
+        <div class="btns">
+            <span class="back"></span>
+            <span class="text">筛选</span>
+            <span class="btn-true r">确定</span>
+        </div>
+        <div class="screenPanel-content">
+            <div class="s-item dataType">
+                <h2 class="title">日期类型</h2>
+                <ul class="list sc-list" data-text="timeType" id="Js_Search_timeSelect">
+                    <li class="s-click active" data-index="0" data-type="month">按月统计</li>
+                    <li class="s-click" data-index="1" data-type="week">按周统计</li>
+                    <li class="s-click" data-index="2" data-type="days">按天统计</li>
+                </ul>
+            </div>
+            <div class="s-item">
+                <h2 class="title">日期区间</h2>
+                <ul class="list sc-list">
+                    <li class="s-click active">2018</li>
+                    <li class="s-click">最近3个月</li>
+                    <li class="s-click">最近半年</li>
+                    <li class="s-click">最近1年</li>
+                </ul>
+                <div class="timeList">
+                    <input class="s-start" type="text" id="Js_startDate" value="2018-01-10" readonly="readonly" />
+                    <span class="space"></span>
+                    <input class="s-end" type="text" id="Js_endDate" value="2018-10-10" readonly="readonly" />
+                </div>
+            </div>
+            <div class="s-item">
+                <h2 class="title">产品类型</h2>
+                <ul class="list sc-list" data-text="operate_type">
+                    <li class="s-click active" data-type="">全部</li>
+                    <li class="s-click" data-type="0">自营</li>
+                    <li class="s-click" data-type="1">他营</li>
+                </ul>
+            </div>
+
+            <div class="s-item">
+                <h2 class="title">线路类别</h2>
+                <span class="s-btn s-lineType"></span>
+                <input type="text" class="s-input" placeholder="请输入线路类别关键字" />
+            </div>
+
+            <div class="s-item">
+                <h2 class="title">线路名称</h2>
+                <span class="s-btn s-line"></span>
+                <input type="text" class="s-input" placeholder="请输入线路关键字" />
+            </div>
+        </div>
+    </div>
+    <header class="hd">
+        <div class="top">
+            <a class="back" href="/sys/api/1.0.0/big-date/dsj-home" title="回到首页"></a>
+            <h2 class="title" id="Js_pageTitle">
+                产品销量分析
+            </h2>
+            <span id="Js_screen" class="screen">筛选</span>
+        </div>
+        <div class="s-List" id="Js_onePage_select">
+            <a class="item active" data-type="month" data-index="0" href="javascript:;">按月统计</a>
+            <a class="item" data-type="week" data-index="1" href="javascript:;">按周统计</a>
+            <a class="item" data-type="days" data-index="2" href="javascript:;">按天统计</a>
+        </div>
+    </header>
+    <footer class="fd next" id="Js_fdScroll">
+        上滑查看更多
+    </footer>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="bd">
+                    <ul class="cvs-infos">
+                        <li class="cvs-item cvs-page1-0">库存数量</li>
+                        <li class="cvs-item cvs-page1-1">预留人数</li>
+                        <li class="cvs-item cvs-page1-2">确认人数</li>
+                    </ul>
+                    <div class="cvs-content">
+                        <div class="chart" id="Js_saleNum">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="bd">
+                    <ul class="cvs-infos">
+                        <li class="cvs-item">确认人数</li>
+                        <li class="cvs-item">预留人数</li>
+                        <li class="cvs-item">库存数量</li>
+                    </ul>
+                    <div class="cvs-content">
+                        <div class="chart" id="Js_optNum">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.op110.com.cn/lib/js/weui.min.js"></script>
+<script src="../ts/swiper-3.4.2.jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/echarts/3.6.2/echarts.min.js"></script>
+<script src="../ts/operate.js"></script>
+</body>
+</html>

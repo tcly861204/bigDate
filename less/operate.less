@@ -1,0 +1,421 @@
+@r:30rem;
+@TextColor : #24fcff;
+@snColor : #ababab;
+@miniColor: #3bccff;
+@yellColor: #ffd800;
+
+.eps{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.r{
+  float: right !important;
+}
+
+@keyframes ftMove
+{
+  from {bottom:60/@r;}
+  to {bottom:20/@r;}
+}
+
+@keyframes ftMovePrev{
+  from {bottom:80/@r;}
+  to {bottom:40/@r;}
+}
+
+.post {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+
+html {
+  background:linear-gradient(#2e1f65, #0c1834);
+}
+html,body {
+  height:100%;
+  overflow:hidden;
+}
+body {
+  background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/top_1515053434521.png") no-repeat top center;
+  background-size:100%;
+}
+
+.wrapper{
+  position:relative;
+  width:100%;
+  height:100%;
+  overflow: hidden;
+  .swiper-container{
+    width: 100%;
+    height:100%;
+    box-sizing:border-box;
+    .swiper-slide{
+      padding:80/@r 0 0 0;
+      width:100%;
+      height:100%;
+      box-sizing:border-box;
+      overflow:hidden;
+    }
+  }
+  .screenPanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    overflow: hidden;
+    background: #232630;
+    transition: transform .3s ease-in;
+    transform: translate3d(100%, 0, 0);
+    .btns {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      z-index: 10;
+      padding: 0 0 0 40/@r;
+      height: 80/@r;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      background: #232630;
+      .text, .btn-true {
+        display: inline-block;
+        height: 80/@r;
+        line-height: 80/@r;
+        font-size: 28/@r;
+      }
+      .back {
+        width: 80/@r;
+        background: url("http://cdnfile.op110.com.cn/files/1/file/20180104/back_1515053459820.png") no-repeat center left;
+        background-size: 36/@r;
+      }
+      .text {
+        flex: 1;
+        text-align: center;
+        color: #ababab;
+      }
+      .btn-true {
+        padding: 0 40/@r;
+        color: @TextColor;
+      }
+    }
+    .screenPanel-content {
+      padding-top: 80/@r;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      box-sizing: border-box;
+      .s-item {
+        position: relative;
+        margin: 0 40/@r;
+        border-top: 1px dashed @snColor;
+        &:nth-of-type(1) {
+          border-top: none;
+        }
+        .title {
+          height: 75/@r;
+          line-height: 85/@r;
+          font-size: 26/@r;
+          color: @snColor;
+          font-weight: bolder;
+        }
+        .list {
+          margin-bottom: 30/@r;
+          li {
+            display: inline-block;
+            width: 150/@r;
+            height: 60/@r;
+            line-height: 60/@r;
+            color: @snColor;
+            font-size: 28/@r;
+            text-align: center;
+            border: 1px solid #249198;
+            box-sizing: border-box;
+            margin-right: 8/@r;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+          .active {
+            color: #232630;
+            border: none;
+            background: #24fcff;
+          }
+        }
+        .s-input {
+          display: block;
+          padding-right: 80/@r;
+          width: 100%;
+          height: 60/@r;
+          box-sizing: border-box;
+          border: none;
+          color: @TextColor;
+          background: url("http://cdnfile.op110.com.cn/files/1/file/20180105/s_1515118974826.png") no-repeat center right;
+          background-size: 36/@r;
+          border-bottom: 1px solid @TextColor;
+          &:nth-of-type(1) {
+            margin-bottom: 30/@r;
+          }
+        }
+        .timeList {
+          margin-bottom: 30/@r;
+          width: 100%;
+          input[type="text"] {
+            width: 40%;
+            height: 60/@r;
+            line-height: 60/@r;
+            padding-right: 10/@r;
+            border: 1px solid @TextColor;
+            background: url("http://cdnfile.op110.com.cn/files/1/file/20180105/timer_1515121318633.png") no-repeat center right;
+            background-origin: content-box;
+            background-size: 36/@r;
+            box-sizing: border-box;
+            color: @TextColor;
+            text-indent: 14/@r;
+          }
+          .space {
+            position: relative;
+            top: -10/@r;
+            width: 18/@r;
+            height: 1px;
+            margin: 0 5/@r;
+            display: inline-block;
+            background: @TextColor;
+          }
+        }
+        .s-btn {
+          position: absolute;
+          right: 0;
+          display: block;
+          width: 80/@r;
+          height: 60/@r;
+        }
+      }
+    }
+  }
+  .s-show{
+    transform: translate3d(0,0,0);
+  }
+  .s-weui{
+    padding-bottom: 273px;
+  }
+}
+
+
+.swiper-slide{
+  .bd{
+    position: absolute;
+    top: 300/@r;
+    left: 0;
+    right: 0;
+    bottom: 150/@r;
+    overflow: auto;
+    .cvs-infos{
+      position: absolute;
+      right: 10px;
+      top:0;
+      .cvs-item{
+        position: relative;
+        margin-left: 40/@r;
+        display: inline-block;
+        color: @TextColor;
+        font-size: 24/@r;
+        &:before{
+          content: "";
+          position: absolute;
+          top:50%;
+          left: -34/@r;
+          width: 30/@r;
+          height: 20/@r;
+          margin-top: -10/@r;
+          background: @miniColor;
+          border-radius: 4/@r;
+        }
+      }
+      .cvs-page1-0{
+        color: @TextColor;
+        &:before{
+          background: #293271;
+        }
+      }
+      .cvs-page1-1{
+        color:@TextColor;
+        &:before{
+          background: #36ff2c;
+        }
+      }
+      .cvs-page1-2{
+        color:@TextColor;
+        &:before{
+          background: #04a6f6;
+        }
+      }
+      .cvs-page2-0{
+        color: @TextColor;
+        &:before{
+          background: #0db9fb;
+        }
+      }
+      .cvs-page2-1{
+        color: @TextColor;
+        &:before{
+          background: #fdbd44;
+        }
+      }
+    }
+    .cvs-content{
+      width: 100%;
+      height: 100%;
+      overflow-y: hidden;
+      overflow-x: auto;
+      .chart{
+        width: 100rem;
+        height: 100%;
+      }
+    }
+  }
+}
+
+/*头部样式*/
+.hd{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  height:auto;
+  z-index:15;
+  .top{
+    box-sizing:border-box;
+    display:flex;
+    .back,.screen{
+      padding-top: 28/@r;
+      height:36/@r;
+    }
+    .back{
+      width:36/@r;
+      padding-left: 20/@r;
+      background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/back_1515053459820.png") no-repeat center center;
+      background-size:100%;
+      background-origin: content-box;
+    }
+    .screen{
+      position:relative;
+      width:66/@r;
+      height:36/@r;
+      padding-right: 20/@r;
+      line-height:36/@r;
+      text-align:center;
+      font-size:28/@r;
+      color:@TextColor;
+      &::before{
+        content:"";
+        position:absolute;
+        top:28/@r;
+        left:-36/@r;
+        width:36/@r;
+        height:36/@r;
+        background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/screen_1515053473557.png") no-repeat center center;
+        background-size:100%;
+      }
+    }
+    .title{
+      flex:1;
+      padding: 28/@r 0 0 30/@r;
+      box-sizing: border-box;
+      text-align:center;
+      font-size:36/@r;
+      font-weight:normal;
+      color:@TextColor;
+      overflow:hidden;
+    }
+  }
+  .s-List{
+    margin: 60/@r auto 0;
+    display: flex;
+    width: 600/@r;
+    height: 60/@r;
+    border: 1px solid rgba(23,207,246,.5);
+    border-radius: 60/@r;
+    overflow: hidden;
+    .item{
+      flex: 1;
+      height: 60/@r;
+      line-height: 60/@r;
+      font-size: 28/@r;
+      text-align: center;
+      color: rgba(255,255,255,.4);
+      border-right: 1px solid rgba(23,207,246,.5);
+      &:last-child{
+        border-right: none;
+      }
+    }
+    .active{
+      color: rgba(32,38,100,1);
+      background: #24fcff;
+    }
+  }
+}
+
+//时间显示
+.hd-showTime{
+  position: absolute;
+  top:76/@r;
+  left: 0;
+  right: 0;
+  font-size: 20/@r;
+  color: @TextColor;
+  border-radius: 30/@r;
+  text-align: center;
+}
+
+/*底部样式*/
+.fd{
+  position:absolute;
+  bottom:80/@r;
+  left:0;
+  right:0;
+  z-index:15;
+  margin:auto;
+  width:180/@r;
+  color:@TextColor;
+  font-size: 26/@r;
+  height:26/@r;
+  text-align:center;
+}
+.next{
+  animation: ftMove .8s ease-in infinite alternate;
+  &::before{
+    content:"";
+    position:absolute;
+    bottom:1.1rem;
+    left:50%;
+    margin:0 0 0 -16.5/@r;
+    width:33/@r;
+    height:18/@r;
+    background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/scroll_1515053497039.png") no-repeat center center;
+    background-size:cover;
+    transform: rotate(180deg);
+  }
+}
+.prev{
+  animation: ftMovePrev .8s ease-in infinite alternate;
+  &::before{
+    content:"";
+    position:absolute;
+    bottom:-1rem;
+    left:50%;
+    margin:0 0 0 -16.5/@r;
+    width:33/@r;
+    height:18/@r;
+    background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/scroll_1515053497039.png") no-repeat center center;
+    background-size:cover;
+  }
+}

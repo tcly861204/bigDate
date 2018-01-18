@@ -1,0 +1,851 @@
+@r:30rem;
+@TextColor : #24fcff;
+@snColor : #ababab;
+@miniColor: #3bccff;
+@yellColor: #ffd800;
+@keyframes ftMove
+{
+  from {bottom:60/@r;}
+  to {bottom:20/@r;}
+}
+
+@keyframes ftMovePrev{
+  from {bottom:80/@r;}
+  to {bottom:40/@r;}
+}
+
+.eps{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*导出头部公共样式*/
+.face-exp(@W,@imgW,@mr){
+  float: left;
+  position: relative;
+  margin-right: @mr;
+  width: @W;
+  height: @W;
+  background: url("http://cdnfile.op110.com.cn/files/1/file/20180104/face_bg_1515053412450.png") no-repeat center center;
+  background-size: cover;
+  img{
+    display: block;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: @imgW;
+    height: @imgW;
+  }
+}
+
+.post {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+.noDate{
+  display: none;
+  font-size: 24/@r;
+  text-align: center !important;
+  color: @snColor !important;
+}
+.fr{
+  float: right !important;
+}
+
+html {
+  background:linear-gradient(#2e1f65, #0c1834);
+}
+html,body {
+  height:100%;
+  overflow:hidden;
+}
+body {
+  background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/top_1515053434521.png") no-repeat top center;
+  background-size:100%;
+}
+
+.wrapper{
+  position:relative;
+  width:100%;
+  height:100%;
+  .saleList{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: transform .3s ease-in-out;
+    transform: translate3d(110%,0,0);
+    background:linear-gradient(#2e1f65, #0c1834);
+    .face-s-hd{
+      height: 80/@r;
+      position: relative;
+      margin-bottom: 40/@r;
+      .s-back{
+        position: absolute;
+        top:0;
+        left:0;
+        padding: 28/@r 20/@r 10/@r 20/@r;
+        width:36/@r;
+        height:36/@r;
+        background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/back_1515053459820.png") no-repeat center center;
+        background-size:100%;
+        background-origin: content-box;
+      }
+      .s-btn{
+        position: absolute;
+        padding: 20/@r;
+        right: 30/@r;
+        bottom: 5/@r;
+        width: 36/@r;
+        height: 36/@r;
+        z-index: 10;
+        background: url("http://cdnfile.op110.com.cn/files/1/file/20180105/s_1515118974826.png") no-repeat center right;
+        background-size: 36/@r;
+        background-origin: content-box;
+      }
+      .s-skey{
+        position: absolute;
+        height: 60/@r;
+        line-height: 60/@r;
+        display: block;
+        bottom: 5/@r;
+        left: 75/@r;
+        width: 635/@r;
+        background: none;
+        border:none;
+        z-index: 1;
+        color: @TextColor;
+        font-size: 28/@r;
+        border-bottom: 1px solid @TextColor;
+      }
+    }
+    .face-bd{
+      position: absolute;
+      top:110/@r;
+      right: 0;
+      left: 0;
+      bottom: 120/@r;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 0 40/@r;
+      box-sizing: border-box;
+      .nodeDate{
+        text-align: center;
+        color: @snColor;
+      }
+      .item{
+        float: left;
+        height: 150/@r;
+        width: 110/@r;
+        margin: 0 20/@r 30/@r 0;
+        .face{
+          display: block;
+          width: 110/@r;
+          height: 110/@r;
+        }
+        .user{
+          display: block;
+          height: 40/@r;
+          line-height: 40/@r;
+          font-size: 24/@r;
+          color: @TextColor;
+          text-align: center;
+        }
+        &:nth-of-type(5n){
+          margin-right: 0;
+        }
+      }
+      .active{
+        background: @TextColor;
+        .face{
+          width: 100/@r;
+          height: 100/@r;
+          margin: 5/@r auto 0;
+        }
+        .user{
+          color: #0c1834;
+        }
+      }
+    }
+    .face-fd{
+      position: absolute;
+      bottom: 40/@r;
+      left: 50%;
+      width: 160/@r;
+      height: 50/@r;
+      margin: 0 0 0 -80/@r;
+      line-height: 50/@r;
+      font-size: 26/@r;
+      border:1px solid @TextColor;
+      text-align: center;
+      color: @TextColor;
+      border-radius: 55/@r;
+    }
+  }
+  .swiper-container{
+    width: 100%;
+    height:100%;
+    box-sizing:border-box;
+    .swiper-slide{
+      padding:80/@r 0 0 0;
+      width:100%;
+      height:100%;
+      box-sizing:border-box;
+      overflow:hidden;
+    }
+  }
+}
+
+.swiper-slide{
+
+  /*销售基本信息*/
+  .sale-v{
+    position: absolute;
+    top:116/@r;
+    left: 50%;
+    margin-left: -134/@r;
+    width: 268/@r;
+    .face{
+      .face-exp(92/@r,74/@r,10/@r);
+      margin-right: 12/@r;
+    }
+    .user{
+      width: 112/@r;
+      padding-top: 15/@r;
+      margin-bottom: 7/@r;
+      float: left;
+      font-size: 28/@r;
+      color: @TextColor;
+    }
+    .job{
+      width: 112/@r;
+      float: left;
+      font-size: 28/@r;
+      color: @TextColor;
+    }
+  }
+
+  .main{
+    position: absolute;
+    top: 212/@r;
+    left: 0;
+    right: 0;
+    bottom: 130/@r;
+    padding-top: 90/@r;
+    overflow: hidden;
+    box-sizing: border-box;
+    .title{
+      color: @TextColor;
+      font-size: 34/@r;
+      margin-bottom: 40/@r;
+      text-align: center;
+      .num{
+        font-family: Arial;
+        padding-left: 15/@r;
+        position: relative;
+        bottom: -5/@r;
+        color: @yellColor;
+        font-size: 54/@r;
+      }
+      .amount{
+        &::before{
+          content: "￥";
+          font-size: 32/@r;
+        }
+      }
+      .psn{
+        &::after{
+          content: "人";
+          font-size: 32/@r;
+        }
+      }
+    }
+    .view{
+      width: 100%;
+      @diff:3rem;
+      height:  calc(~"100% - @{diff}");
+      overflow-y: hidden;
+      overflow-x: auto;
+      .chart{
+        width: 100rem;
+        height: 100%;
+      }
+    }
+    .main-ct{
+      height: 100%;
+      .item{
+        height: 50%;
+        text-align: center;
+        &-hd{
+          height: 80%;
+          margin: 0 auto 15/@r;
+          position: relative;
+          p{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            font-size: 68/@r;
+            color: #60fdff;
+            span{
+              font-size: 20/@r;
+            }
+          }
+          .bit{
+            margin-top: -48/@r;
+            font-weight: bold;
+          }
+          .pst{
+            margin-top: 24/@r;
+            font-size: 24/@r;
+          }
+          .ctx{
+            //transform: scale(0.25);
+            zoom: 0.25;
+            transform-origin: left top;
+          }
+        }
+        &:first-child{
+          p{
+            color:#3bccff;
+          }
+        }
+        &:last-child{
+          p{
+            color: #715eff;
+          }
+        }
+        &-text{
+          font-size: 30/@r;
+          color: #60fdff;
+        }
+      }
+    }
+  }
+}
+.custom{
+  .main{
+    padding-top: 60/@r;
+    overflow: hidden;
+    .cvs{
+      transform-origin: left top;
+      transform: scale(0.25);
+      //width: 100%;
+      //height: 100%;
+    }
+    .cvsMain{
+      width: 100%;
+      height: 100%;
+      overflow-y: hidden;
+      overflow-x: auto;
+      .cvsList{
+        height: 100%;
+      }
+    }
+  }
+}
+.custom .screenY{
+  width: 100%;
+  @diff:11rem;
+  height:  calc(~"100% - @{diff}");
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  >.cvs-content{
+    height: 100%;
+  }
+}
+
+.cvsList{
+  overflow: hidden;
+  .cvs-item{
+    float: left;
+    width: 30%;
+    margin-bottom: 60/@r;
+    text-align: center;
+    .cvs-cnt{
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin-bottom: 27/@r;
+      .ctx-num{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        margin: -1rem 0 0 0;
+        font-weight: 600;
+        text-align: center;
+        color:#715eff;
+        font-size: 50/@r;
+        .bit{
+          font-size: 24/@r;
+        }
+      }
+      .cxt{
+        //transform: scale(0.25);
+        zoom: 0.25;
+        transform-origin: left top;
+      }
+    }
+    .typeName{
+      color: @TextColor;
+      font-size: 32/@r;
+    }
+    .num{
+      margin: 15/@r 0 5/@r;
+    }
+    .num,.no{
+      color: @TextColor;
+      font-size: 26/@r;
+    }
+    .no{
+      color: @yellColor !important;
+    }
+  }
+}
+.min{
+  margin: 0 auto;
+  .cvs-item{
+    &:nth-child(3n){
+      margin-right: 0 !important;
+    }
+  }
+}
+
+
+/*头部样式*/
+.hd{
+  display:flex;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  height:64/@r;
+  box-sizing:border-box;
+  z-index:15;
+  .back,.screen{
+    padding-top: 28/@r;
+    height:36/@r;
+  }
+  .back{
+    width:36/@r;
+    padding-left: 20/@r;
+    background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/back_1515053459820.png") no-repeat center center;
+    background-size:100%;
+    background-origin: content-box;
+  }
+  .screen{
+    position:relative;
+    width:66/@r;
+    height:36/@r;
+    padding-right: 20/@r;
+    line-height:36/@r;
+    text-align:center;
+    font-size:28/@r;
+    color:@TextColor;
+    &::before{
+      content:"";
+      position:absolute;
+      top:28/@r;
+      left:-36/@r;
+      width:36/@r;
+      height:36/@r;
+      background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/screen_1515053473557.png") no-repeat center center;
+      background-size:100%;
+    }
+  }
+  .title{
+    flex:1;
+    padding: 28/@r 0 0 30/@r;
+    box-sizing: border-box;
+    text-align:center;
+    font-size:36/@r;
+    font-weight:normal;
+    color:@TextColor;
+    overflow:hidden;
+  }
+}
+
+//时间显示
+.hd-showTime{
+  position: absolute;
+  top:76/@r;
+  left: 0;
+  right: 0;
+  font-size: 20/@r;
+  color: @TextColor;
+  border-radius: 30/@r;
+  text-align: center;
+}
+
+/*底部样式*/
+.fd{
+  position:absolute;
+  bottom:80/@r;
+  left:0;
+  right:0;
+  z-index:15;
+  margin:auto;
+  width:180/@r;
+  color:@TextColor;
+  font-size: 26/@r;
+  height:26/@r;
+  text-align:center;
+}
+.next{
+  animation: ftMove .8s ease-in infinite alternate;
+  &::before{
+    content:"";
+    position:absolute;
+    bottom:1.1rem;
+    left:50%;
+    margin:0 0 0 -16.5/@r;
+    width:33/@r;
+    height:18/@r;
+    background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/scroll_1515053497039.png") no-repeat center center;
+    background-size:cover;
+    transform: rotate(180deg);
+  }
+}
+.prev{
+  animation: ftMovePrev .8s ease-in infinite alternate;
+  &::before{
+    content:"";
+    position:absolute;
+    bottom:-1rem;
+    left:50%;
+    margin:0 0 0 -16.5/@r;
+    width:33/@r;
+    height:18/@r;
+    background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/scroll_1515053497039.png") no-repeat center center;
+    background-size:cover;
+  }
+}
+
+
+
+
+
+
+/*筛选版面*/
+.wrapper{
+  .screenPanel{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    overflow:hidden;
+    background: #232630;
+    transition: transform .3s ease-in;
+    transform: translate3d(110%,0,0);
+    .btns{
+      position: absolute;
+      top:0;
+      left: 0;
+      right: 0;
+      display: flex;
+      z-index: 10;
+      padding: 0 0 0 40/@r;
+      height: 80/@r;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      background: #232630;
+      .text,.btn-true{
+        display: inline-block;
+        height: 80/@r;
+        line-height: 80/@r;
+        font-size: 28/@r;
+      }
+      .back{
+        width:80/@r;
+        background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/back_1515053459820.png") no-repeat center left;
+        background-size:36/@r;
+      }
+      .text{
+        flex: 1;
+        text-align: center;
+        color: #ababab;
+      }
+      .btn-true{
+        padding: 0 40/@r;
+        color: @TextColor;
+      }
+    }
+    .screenPanel-content{
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-top: 80/@r;
+      box-sizing: border-box;
+    }
+    .s-item{
+      position: relative;
+      margin: 0 40/@r;
+      border-top:1px dashed @snColor;
+      &:nth-of-type(1){
+        border-top: none;
+      }
+      .s-face-btn{
+        position: absolute;
+        z-index: 5;
+        right: 0;
+        top: 2.5rem;
+        width: 2.5rem;
+        height: 2rem;
+      }
+      .title{
+        height: 75/@r;
+        line-height: 85/@r;
+        font-size: 26/@r;
+        color: @snColor;
+        font-weight: bolder;
+      }
+      .list{
+        margin-bottom: 30/@r;
+        li{
+          display:inline-block;
+          width: 150/@r;
+          height: 60/@r;
+          line-height: 60/@r;
+          color: @snColor;
+          font-size: 28/@r;
+          text-align: center;
+          border: 1px solid #249198;
+          box-sizing: border-box;
+          margin-right: 8/@r;
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+        .active{
+          color: #232630;
+          border: none;
+          background: #24fcff;
+        }
+      }
+      .s-input{
+        display: block;
+        padding-right: 80/@r;
+        width: 100%;
+        height: 60/@r;
+        box-sizing: border-box;
+        border: none;
+        color: @TextColor;
+        background: url("http://cdnfile.op110.com.cn/files/1/file/20180105/s_1515118974826.png") no-repeat center right;
+        background-size: 36/@r;
+        border-bottom:1px solid @TextColor;
+        &:nth-of-type(1){
+          margin-bottom: 30/@r;
+        }
+      }
+      .timeList{
+        margin-bottom: 30/@r;
+        width: 100%;
+        input[type="text"]{
+          width: 40%;
+          height: 60/@r;
+          line-height: 60/@r;
+          padding-right: 10/@r;
+          border: 1px solid @TextColor;
+          background: url("http://cdnfile.op110.com.cn/files/1/file/20180105/timer_1515121318633.png") no-repeat center right;
+          background-origin:content-box;
+          background-size: 36/@r;
+          box-sizing: border-box;
+          color: @TextColor;
+          text-indent: 14/@r;
+        }
+        .space{
+          position: relative;
+          top:-10/@r;
+          width: 18/@r;
+          height: 1px;
+          margin: 0 5/@r;
+          display: inline-block;
+          background: @TextColor;
+        }
+      }
+      .s-btn{
+        position: absolute;
+        right: 0;
+        display: block;
+        width: 80/@r;
+        height: 60/@r;
+      }
+      .faceList{
+        width: 100%;
+        overflow: hidden;
+        .face-item{
+          width: 100/@r;
+          height: 145/@r;
+          float: left;
+          margin: 0 30/@r 24/@r 0;
+          padding: 1px 1px 0;
+          dt{
+            width: auto;
+          }
+          img{
+            display: block;
+            width: 100/@r;
+            height: 100/@r;
+          }
+          dd{
+            text-align: center;
+            padding: 10/@r 0 0;
+            color: @TextColor;
+            font-size: 24/@r;
+          }
+          &:nth-child(5n){
+            margin-right: 0;
+          }
+        }
+        .active{
+          background: @TextColor;
+          dd{
+            color: #0c1834;
+          }
+        }
+      }
+      .max{
+        max-height: 320/@r;
+      }
+      .dropLoadMax{
+        height: 50/@r;
+        margin: 0 0 30/@r;
+        background: url("http://cdnfile.op110.com.cn/files/1/file/20180105/dropdown_1515145592589.png")no-repeat center center;
+        background-size: 21/@r;
+      }
+      .dropLoadMax.max{
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .s-show{
+    transform: translate3d(0,0,0);
+  }
+  .s-weui{
+    padding-bottom: 273px;
+  }
+}
+
+
+/* 第一页 */
+.page1{
+  .saleInfo{
+    padding: 0 40/@r;
+    margin-top: 66/@r;
+    margin-bottom: 60/@r;
+    overflow: hidden;
+    .face{
+      .face-exp(142/@r,124/@r,30/@r);
+    }
+    dd{
+      margin-bottom: 20/@r;
+      float: left;
+      color: @miniColor;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      .v{
+        padding-left: 10/@r;
+        font-size: 28/@r;
+        color: @TextColor;
+      }
+    }
+    .user{
+      width: 450/@r;
+      color: @TextColor;
+      font-size: 38/@r;
+      .icon{
+        display: inline-block;
+        width: 28/@r;
+        height: 28/@r;
+        margin-left: 15/@r;
+        background: url("http://cdnfile.op110.com.cn/files/1/file/20180104/sex-man_1515053518183.png") no-repeat center center;
+        background-size: cover;
+      }
+      .icon-man{
+        background-image: url("http://cdnfile.op110.com.cn/files/1/file/20180104/sex-man_1515053518183.png");
+      }
+      .icon-woman{
+        background-image: url("http://cdnfile.op110.com.cn/files/1/file/20180104/sex-woman_1515053535292.png");
+      }
+    }
+  }
+  .amounts{
+    padding: 0 40/@r;
+    overflow: hidden;
+    dt{
+      float: left;
+      margin-bottom: 28/@r;
+      width: 100%;
+      height: 200/@r;
+      box-sizing: border-box;
+      color: @TextColor;
+      background: #202452;
+      text-align: center;
+    }
+    dd{
+      float: left;
+      margin-bottom: 28/@r;
+      width: 321/@r;
+      height: 200/@r;
+      color: @TextColor;
+      text-align: center;
+      box-sizing: border-box;
+      background: #202452;
+      &:nth-of-type(2n+1){
+        margin-right: 28/@r;
+      }
+    }
+    .title{
+      padding: 45/@r 0 0 0;
+      margin-bottom: 10/@r;
+      font-size: 26/@r;
+      color: @miniColor;
+    }
+    strong{
+      font-size: 66/@r;
+      font-family: Arial;
+    }
+    .time{
+      display: block;
+      font-size: 20/@r;
+    }
+    .no-amount{
+      color: @yellColor;
+      font-size: 70/@r;
+    }
+    .amount{
+      &::before{
+        content: "￥";
+        font-size: 32/@r;
+      }
+    }
+    .bit{
+      &::after{
+        content: "%";
+        font-size: 30/@r;
+      }
+    }
+    .psn{
+      &::after{
+        content: "人";
+        font-size: 30/@r;
+      }
+    }
+  }
+}
+
