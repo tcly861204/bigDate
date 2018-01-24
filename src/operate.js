@@ -1,3 +1,4 @@
+/* 完善划屏 */
 (function(window){
     ({
         init:function(){

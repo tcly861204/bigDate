@@ -1,3 +1,4 @@
+/* vue改造版 */
 (function(window){
     /* 动画对象 */
     var lastTime = 0;
