@@ -497,7 +497,6 @@ var app = new Vue({
       },
       /* 加载其它页 */
       loadPages:function(num){
-        console.log(num);
         var that = this;
         var sum = 0;
         if(num===that.nowPageIndex){
@@ -1011,7 +1010,7 @@ var app = new Vue({
                       ctx.fillRect(disX, _height + i * _lineHeight, (maxWidth * iNum) / 100, _height);
                   }
                   else {
-                      ctx.fillText(data[i].saleUnitPriceSection + '%', cvs.width - disX, _height + i * _lineHeight);
+                      ctx.fillText(Number(data[i].saleUnitPriceSection).toFixed(2) + '%', cvs.width - disX, _height + i * _lineHeight);
                       ctx.fillStyle = linearFillType;
                       ctx.fillRect(disX, _height + i * _lineHeight, (maxWidth * data[i].saleUnitPriceSection) / 100, _height);
                   }

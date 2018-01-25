@@ -314,30 +314,37 @@
                 case 2:
             }
         },
-        saleNumConfig:function(bit,dataTimeArr,trueNums,stayNums,planNums){
+        saleNumConfig:function(bit,dataTimeArr,planNums,stayNums,trueNums,counts){
           return {
-                color: ['#fdbd44', '#36ff2c', '#04a6f6'],
+                color: ['#ffdf2b', '#28ff79', '#0ab2f9'],
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
                         type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                    },
+                    formatter: function (params, ticket, callback) {
+                        return params[0].name+'<br/>'+
+                            params[0].seriesName+': '+params[0].data+'<br/>'+
+                            params[1].seriesName+': '+params[1].data+'<br/>'+
+                            params[2].seriesName+': '+params[2].data+'<br/>'+
+                            '总库存：'+counts[params[0].dataIndex];
                     }
                 },
                 legend: {
                     data: [{
-                            name: '库存数量',
+                            name: '剩余库存',
                             textStyle: {
-                                color: '#3bccff'
+                                color: '#3bcaff'
                             }
                         }, {
                             name: '预留人数',
                             textStyle: {
-                                color: '#3bccff'
+                                color: '#3bcaff'
                             }
                         }, {
                             name: '确认人数',
                             textStyle: {
-                                color: '#3bccff'
+                                color: '#3bcaff'
                             }
                         }],
                     top: 0,
@@ -412,7 +419,7 @@
                         stack: '收入',
                         data: stayNums
                     }, {
-                        name: '库存数量',
+                        name: '剩余库存',
                         type: 'bar',
                         barWidth:20,
                         stack: '收入',
@@ -430,13 +437,15 @@
             dataLen = dataLen<10 ? 10 : dataLen;
             var bit = Math.floor(1000 / dataLen);
             var dataTimeArr = [];
+            var counts = [];
             var planNums = [];
             var stayNums = [];
             var trueNums = [];
             var Len = this.pageDates.one.length;
             this.pageDates.one.forEach(function (item, index) {
                 dataTimeArr.push(item.planDate);
-                planNums.push(item.planNum);
+                planNums.push(item.planNum-item.trueNum-item.stayNum);
+                counts.push(item.planNum);
                 stayNums.push(item.stayNum);
                 trueNums.push(item.trueNum);
             });
@@ -444,11 +453,11 @@
             planNums.push('');
             stayNums.push('');
             trueNums.push('');
-            this.saleChartNode.setOption(this.saleNumConfig(bit,dataTimeArr,planNums,stayNums,trueNums));
+            this.saleChartNode.setOption(this.saleNumConfig(bit,dataTimeArr,planNums,stayNums,trueNums,counts));
         },
         optNumConfig:function(bit,planDateList,amountList,profitAmountList){
             return {
-                color: ['#0db9fb', '#fdbd44'],
+                color: ['#0ab2f9', '#d03547'],
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
