@@ -50,10 +50,10 @@
   bottom:0;
 }
 .noDate{
-  display: none;
   font-size: 24/@r;
   text-align: center !important;
   color: @snColor !important;
+  padding-bottom: 1rem;
 }
 .fr{
   float: right !important;
@@ -88,14 +88,14 @@ body {
     transform: translate3d(110%,0,0);
     background:linear-gradient(#2e1f65, #0c1834);
     .face-s-hd{
-      height: 80/@r;
+      height: 90/@r;
       position: relative;
       margin-bottom: 40/@r;
       .s-back{
         position: absolute;
         top:0;
         left:0;
-        padding: 28/@r 20/@r 10/@r 20/@r;
+        padding: 38/@r 20/@r 10/@r 20/@r;
         width:36/@r;
         height:36/@r;
         background:url("http://cdnfile.op110.com.cn/files/1/file/20180104/back_1515053459820.png") no-repeat center center;
@@ -275,10 +275,9 @@ body {
       width: 100%;
       @diff:3rem;
       height:  calc(~"100% - @{diff}");
-      overflow-y: hidden;
-      overflow-x: auto;
+      overflow: hidden;
       .chart{
-        width: 100rem;
+        width: 100%;
         height: 100%;
       }
     }
@@ -400,14 +399,14 @@ body {
     }
     .typeName{
       color: @TextColor;
-      font-size: 32/@r;
+      font-size: 28/@r;
     }
     .num{
       margin: 15/@r 0 5/@r;
     }
     .num,.no{
       color: @TextColor;
-      font-size: 26/@r;
+      font-size: 24/@r;
     }
     .no{
       color: @yellColor !important;
@@ -416,6 +415,16 @@ body {
 }
 .min{
   margin: 0 auto;
+
+}
+.min-2,.min-3,.min-4{
+  .cvs-item{
+    &:nth-child(2n){
+      margin-right: 0 !important;
+    }
+  }
+}
+.min-5{
   .cvs-item{
     &:nth-child(3n){
       margin-right: 0 !important;
@@ -504,7 +513,7 @@ body {
   text-align:center;
 }
 .next{
-  animation: ftMove .8s ease-in infinite alternate;
+  animation: ftMove .6s linear infinite alternate;
   &::before{
     content:"";
     position:absolute;
@@ -519,7 +528,7 @@ body {
   }
 }
 .prev{
-  animation: ftMovePrev .8s ease-in infinite alternate;
+  animation: ftMovePrev .6s linear infinite alternate;
   &::before{
     content:"";
     position:absolute;
@@ -642,7 +651,10 @@ body {
         width: 100%;
         height: 60/@r;
         box-sizing: border-box;
-        border: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
         color: @TextColor;
         background: url("http://cdnfile.op110.com.cn/files/1/file/20180105/s_1515118974826.png") no-repeat center right;
         background-size: 36/@r;
@@ -773,14 +785,15 @@ body {
         width: 28/@r;
         height: 28/@r;
         margin-left: 15/@r;
+        //background: url("http://cdnfile.op110.com.cn/files/1/file/20180104/sex-man_1515053518183.png") no-repeat center center;
+      }
+      .icon-man{
         background: url("http://cdnfile.op110.com.cn/files/1/file/20180104/sex-man_1515053518183.png") no-repeat center center;
         background-size: cover;
       }
-      .icon-man{
-        background-image: url("http://cdnfile.op110.com.cn/files/1/file/20180104/sex-man_1515053518183.png");
-      }
       .icon-woman{
-        background-image: url("http://cdnfile.op110.com.cn/files/1/file/20180104/sex-woman_1515053535292.png");
+        background: url("http://cdnfile.op110.com.cn/files/1/file/20180104/sex-woman_1515053535292.png") no-repeat center center;
+        background-size: cover;
       }
     }
   }

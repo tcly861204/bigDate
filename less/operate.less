@@ -156,7 +156,10 @@ body {
           width: 100%;
           height: 60/@r;
           box-sizing: border-box;
-          border: none;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          border-radius: 0;
           color: @TextColor;
           background: url("http://cdnfile.op110.com.cn/files/1/file/20180105/s_1515118974826.png") no-repeat center right;
           background-size: 36/@r;
@@ -243,7 +246,7 @@ body {
       .cvs-page1-0{
         color: @TextColor;
         &:before{
-          background: #293271;
+          background: #fdbd44;
         }
       }
       .cvs-page1-1{
@@ -274,10 +277,9 @@ body {
     .cvs-content{
       width: 100%;
       height: 100%;
-      overflow-y: hidden;
-      overflow-x: auto;
+      overflow: hidden;
       .chart{
-        width: 100rem;
+        width: 100%;
         height: 100%;
       }
     }
