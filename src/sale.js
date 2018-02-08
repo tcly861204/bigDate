@@ -42,7 +42,8 @@
         this._rem = this._ww / 25;
         this.getDateUrl = {
             //获取所有销售
-            sale: '/sys/api/1.0.0/big-date/dsj-api-allSales',
+            // sale: '/sys/api/1.0.0/big-date/dsj-api-allSales',
+            sale: '/sys/main?xwl=34580M8L8X9A',
             //获取单个销售基本信息
             itemSale: '/sys/api/1.0.0/big-date/dsj-api-itemSaleInfos',
             //获取销售不同页面的数据
