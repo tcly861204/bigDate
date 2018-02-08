@@ -124,7 +124,7 @@
           return '-';
     });
     Vue.filter("formatNum",function(num){
-      if(num!==0){
+      if(num!==0 && num){
           return num.toFixed(2);
       }else{
           return num;
@@ -905,7 +905,7 @@ var app = new Vue({
       },
       //销售类别占比模板
       saleTypeTpl : function (obj, _width, _marginRight, num) {
-          return "<dl class=\"cvs-item\" style=\"width: " + _width + "px;margin-right:" + _marginRight + "px;\">\n                    <dt class=\"cvs-cnt\" style=\"width:" + _width + "px;height: " + _width + "px;\">\n                        <canvas class=\"cxt\" id=\"Js_saleType_" + num + "\" width=\"" + _width + "\" height=\"" + _width + "\"></canvas>\n                        <p class=\"ctx-num\"></p>\n                    </dt>\n                    <dd class=\"typeName eps\">" + (obj.lineTypeName || '-') + "</dd>\n                    <dd class=\"num eps\">\u6536\u5BA2" + obj.salePerNum + "\u4EBA</dd>\n                    <dd class=\"no eps\">\u56E2\u961FNO." + (obj.saleRanking + 1) + "</dd>\n                </dl>";
+          return "<dl class=\"cvs-item\" style=\"width: " + _width + "px;margin-right:" + _marginRight + "px;\">\n                    <dt class=\"cvs-cnt\" style=\"width:" + _width + "px;height: " + _width + "px;\">\n                        <canvas style=\"zoom:0.25;\" class=\"cxt\" id=\"Js_saleType_" + num + "\" width=\"" + _width + "\" height=\"" + _width + "\"></canvas>\n                        <p class=\"ctx-num\"></p>\n                    </dt>\n                    <dd class=\"typeName eps\">" + (obj.lineTypeName || '-') + "</dd>\n                    <dd class=\"num eps\">\u6536\u5BA2" + obj.salePerNum + "\u4EBA</dd>\n                    <dd class=\"no eps\">\u56E2\u961FNO." + (obj.saleRanking + 1) + "</dd>\n                </dl>";
       },
       /* 产品类别销售占比 */
       saleTypeBit : function(){

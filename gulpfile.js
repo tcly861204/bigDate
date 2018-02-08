@@ -32,14 +32,14 @@ const uglify = require('gulp-uglify');
 //         .pipe(gulp.dest('build/css'));
 // });
 
-// gulp.task('LessTask', function() {
-//     var processors = [autoprefixer, cssnext, precss];
-//     gulp.src('Less/*.less')
-//         .pipe(less())
-//         .pipe(postcss(processors))
-//         .pipe(cssmin())
-//         .pipe(gulp.dest('./build/css/'));
-// });
+gulp.task('LessTask', function() {
+    var processors = [autoprefixer, cssnext, precss];
+    gulp.src('Less/*.less')
+        .pipe(less())
+        .pipe(postcss(processors))
+        .pipe(cssmin())
+        .pipe(gulp.dest('./build/css/'));
+});
 
 // gulp.task('tsTask', function () {
 //     gulp.src('ts/*ts')
@@ -62,7 +62,7 @@ gulp.task('jsMinTask',function(){
 gulp.task("default", function() {
     // gulp.watch("./css/*.styl", ['postcssTask']);
     //less跑移动端任务
-   // gulp.watch("Less/*.less", ['LessTask']);
+   gulp.watch("Less/*.less", ['LessTask']);
    // gulp.watch("ts/*ts",["tsTask"]);
-    gulp.watch('src/*.js',['jsMinTask']);
+   gulp.watch('src/*.js',['jsMinTask']);
 });
