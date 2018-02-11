@@ -252,6 +252,7 @@ var app = new Vue({
         startdate: '',
         enddate: ''
       },
+      saleWholeFlag:'false',
       saleWhole:[],
       saleSingles:{
         birthday:'',
@@ -285,6 +286,7 @@ var app = new Vue({
              that.resetSaleAll = res.data.saleWhole;
           }
           if(from==='first'){
+             that.saleWholeFlag = 'true';
              that.saleWhole = res.data.saleWhole;
           }
           if(from==='search'){
