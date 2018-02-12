@@ -8,17 +8,17 @@
             };
             this.getDateUrl = {
                 //线路类别
-                // lineTypeUrl: '/sys/api/1.0.0/big-date/dsj-api-lineType',
-                lineTypeUrl: '/sys/main?xwl=34580M8L7PLG',
+                lineTypeUrl: '/sys/api/1.0.0/big-date/dsj-api-lineType',
+                // lineTypeUrl: '/sys/main?xwl=34580M8L7PLG',
                 //线路列表
-                // lineListUrl: '/sys/api/1.0.0/big-date/dsj-api-lineList',
-                lineListUrl: '/sys/main?xwl=34580M8L7SVI',
+                lineListUrl: '/sys/api/1.0.0/big-date/dsj-api-lineList',
+                // lineListUrl: '/sys/main?xwl=34580M8L7SVI',
                 //产品销售经营统计
-                // productSale: '/sys/api/1.0.0/big-date/dsj-api-saleOperation',
-                productSale: '/sys/main?xwl=34580M8L7YGV',
+                productSale: '/sys/api/1.0.0/big-date/dsj-api-saleOperation',
+                // productSale: '/sys/main?xwl=34580M8L7YGV',
                 //产品营业经营统计
-                // productBusiness: '/sys/api/1.0.0/big-date/dsj-api-productOperation'
-                productBusiness: '/sys/main?xwl=34580M8L8TBM'
+                productBusiness: '/sys/api/1.0.0/big-date/dsj-api-productOperation'
+                // productBusiness: '/sys/main?xwl=34580M8L8TBM'
             };
             //搜索列表
             this.searchDates = {

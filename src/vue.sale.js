@@ -232,14 +232,14 @@ var app = new Vue({
       },
       dataURL:{
         //获取所有销售
-        // sale: '/sys/api/1.0.0/big-date/dsj-api-allSales',
-        sale: '/sys/main?xwl=34580M8L8X9A',
+        sale: '/sys/api/1.0.0/big-date/dsj-api-allSales',
+        // sale: '/sys/main?xwl=34580M8L8X9A',
         //获取单个销售基本信息
-        // itemSale: '/sys/api/1.0.0/big-date/dsj-api-itemSaleInfos',
-        itemSale: '/sys/main?xwl=34580M8L8X9P',
+        itemSale: '/sys/api/1.0.0/big-date/dsj-api-itemSaleInfos',
+        // itemSale: '/sys/main?xwl=34580M8L8X9P',
         //获取销售不同页面的数据
-        // deepSale: '/sys/api/1.0.0/big-date/dsj-api-pageAlls'
-        deepSale: '/sys/main?xwl=34580M8L8Z1I'
+        deepSale: '/sys/api/1.0.0/big-date/dsj-api-pageAlls'
+        // deepSale: '/sys/main?xwl=34580M8L8Z1I'
       },
       //搜索条件
       searchDates:{
